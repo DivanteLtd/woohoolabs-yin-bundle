@@ -1,0 +1,23 @@
+{
+    "name": "divante-ltd/woohoolabs-yin-bundle",
+    "description": "woohoolabs yin Bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Piotr Belina",
+            "email": "belina.piotr@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "woohoolabs/yin": "^2.0",
+        "zendframework/zend-diactoros": "^1.6",
+        "symfony/psr-http-message-bridge": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Divante\\WoohoolabsYinBundle\\": "src/"
+        }
+    }
+}

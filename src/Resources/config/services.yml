@@ -1,0 +1,17 @@
+services:
+    WoohooLabs\Yin\JsonApi\:
+        resource: '../../vendor/woohoolabs/yin/src/JsonApi'
+
+    Zend\Diactoros\ServerRequest:
+        factory: 'Divante\WoohoolabsYin\Request\RequestTransformer:getPsr7Request'
+
+    Zend\Diactoros\Response: ~
+
+    WoohooLabs\Yin\JsonApi\Request\Request:
+        arguments:
+          $request: '@Zend\Diactoros\ServerRequest'
+
+    WoohooLabs\Yin\JsonApi\JsonApi:
+        arguments:
+            $request: '@WoohooLabs\Yin\JsonApi\Request\Request'
+            $response: '@Zend\Diactoros\Response'
