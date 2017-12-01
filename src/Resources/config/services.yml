@@ -1,17 +1,23 @@
 services:
-    WoohooLabs\Yin\JsonApi\:
-        resource: '../../vendor/woohoolabs/yin/src/JsonApi'
+    Divante\WoohoolabsYinBundle\Request\RequestTransformer:
+        arguments:
+            $stack: '@request_stack'
+            $factory: '@sensio_framework_extra.psr7.http_message_factory'
 
     Zend\Diactoros\ServerRequest:
-        factory: 'Divante\WoohoolabsYin\Request\RequestTransformer:getPsr7Request'
+        factory: 'Divante\WoohoolabsYinBundle\Request\RequestTransformer:getPsr7Request'
 
     Zend\Diactoros\Response: ~
+
+    WoohooLabs\Yin\JsonApi\Exception\DefaultExceptionFactory: ~
 
     WoohooLabs\Yin\JsonApi\Request\Request:
         arguments:
           $request: '@Zend\Diactoros\ServerRequest'
+          $exceptionFactory: '@WoohooLabs\Yin\JsonApi\Exception\DefaultExceptionFactory'
 
     WoohooLabs\Yin\JsonApi\JsonApi:
+        public: true
         arguments:
             $request: '@WoohooLabs\Yin\JsonApi\Request\Request'
             $response: '@Zend\Diactoros\Response'

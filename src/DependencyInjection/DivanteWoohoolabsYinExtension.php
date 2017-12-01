@@ -1,7 +1,6 @@
 <?php
 
-
-namespace Divante\WooholabsYin;
+namespace Divante\WoohoolabsYinBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

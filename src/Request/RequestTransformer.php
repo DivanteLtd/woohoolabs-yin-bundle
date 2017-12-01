@@ -1,7 +1,6 @@
 <?php
 
-
-namespace Divante\WoohoolabsYin\Request;
+namespace Divante\WoohoolabsYinBundle\Request;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory;
